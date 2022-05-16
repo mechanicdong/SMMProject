@@ -6,27 +6,38 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ConversationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor =  .red
+        view.backgroundColor = .red
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        let logged_in = UserDefaults.standard.bool(forKey: "logged_in")
-        
-        if !logged_in {
+        validateAuth()
+//        let logged_in = UserDefaults.standard.bool(forKey: "logged_in")
+//
+//        if !logged_in {
+//            let vc = LoginViewController()
+//            let nav = UINavigationController(rootViewController: vc)
+//            nav.modalPresentationStyle = .fullScreen
+//            present(nav, animated: false, completion: nil)
+//        }
+        //위 코드 대신 Firebase로 로그인 상태 확인
+    }
+    
+    private func validateAuth() {
+        if FirebaseAuth.Auth.auth().currentUser == nil {
             let vc = LoginViewController()
             let nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .fullScreen
             present(nav, animated: false, completion: nil)
         }
     }
-    
     
 }
 

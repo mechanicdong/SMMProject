@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		39AC23A1A6F286CF95869195 /* Pods_SMMProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDFDEE09BE8429C2416125C /* Pods_SMMProject.framework */; };
 		DD46F48628322ADF0087133D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD46F48528322ADF0087133D /* GoogleService-Info.plist */; };
+		DD46F488283232940087133D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD46F487283232940087133D /* DatabaseManager.swift */; };
 		DDC34EC528320DAD0011C81C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC34EC428320DAD0011C81C /* AppDelegate.swift */; };
 		DDC34EC728320DAD0011C81C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC34EC628320DAD0011C81C /* SceneDelegate.swift */; };
 		DDC34EC928320DAD0011C81C /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC34EC828320DAD0011C81C /* ConversationsViewController.swift */; };
@@ -30,6 +31,7 @@
 		A150538206D6589091DCB105 /* Pods-SMMProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMMProject.debug.xcconfig"; path = "Target Support Files/Pods-SMMProject/Pods-SMMProject.debug.xcconfig"; sourceTree = "<group>"; };
 		BB482997FEF0274A92DA4FFF /* Pods-SMMProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMMProject.release.xcconfig"; path = "Target Support Files/Pods-SMMProject/Pods-SMMProject.release.xcconfig"; sourceTree = "<group>"; };
 		DD46F48528322ADF0087133D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DD46F487283232940087133D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		DDC34EC128320DAD0011C81C /* SMMProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMMProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC34EC428320DAD0011C81C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDC34EC628320DAD0011C81C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				DDC34EC428320DAD0011C81C /* AppDelegate.swift */,
 				DDC34EC628320DAD0011C81C /* SceneDelegate.swift */,
 				DDC34EEE283213E80011C81C /* Extentions.swift */,
+				DD46F487283232940087133D /* DatabaseManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDC34EE228320F8D0011C81C /* LoginViewController.swift in Sources */,
+				DD46F488283232940087133D /* DatabaseManager.swift in Sources */,
 				DDC34EE428320F9B0011C81C /* RegisterViewController.swift in Sources */,
 				DDC34EEF283213E80011C81C /* Extentions.swift in Sources */,
 				DDC34EEA28320FE80011C81C /* NewConversationViewController.swift in Sources */,
