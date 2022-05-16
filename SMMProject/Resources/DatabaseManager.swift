@@ -14,8 +14,6 @@ final class DatabaseManager {
     static let shared = DatabaseManager()
     
     private let database = Database.database().reference()
-    
-
 }
 
 //MARK: Account Management, write function to database

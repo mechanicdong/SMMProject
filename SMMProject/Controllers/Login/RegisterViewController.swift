@@ -165,13 +165,12 @@ class RegisterViewController: UIViewController {
             }
         
         // Firebase Sign Up
-        
         DatabaseManager.shared.userExists(with: email) { [weak self] exists in
             guard let strongSelf = self else {
                 return
             }
             guard !exists else {
-                /// user already exists
+                ///user already exists
                 strongSelf.alertUserLoginError(message: "Looks like a user account for that email address already exists")
                 return
             }
