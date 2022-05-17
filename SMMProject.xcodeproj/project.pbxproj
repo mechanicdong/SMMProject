@@ -10,6 +10,7 @@
 		39AC23A1A6F286CF95869195 /* Pods_SMMProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDFDEE09BE8429C2416125C /* Pods_SMMProject.framework */; };
 		DD46F48628322ADF0087133D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD46F48528322ADF0087133D /* GoogleService-Info.plist */; };
 		DD46F488283232940087133D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD46F487283232940087133D /* DatabaseManager.swift */; };
+		DD46F48A283383CD0087133D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD46F489283383CD0087133D /* ChatViewController.swift */; };
 		DDC34EC528320DAD0011C81C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC34EC428320DAD0011C81C /* AppDelegate.swift */; };
 		DDC34EC728320DAD0011C81C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC34EC628320DAD0011C81C /* SceneDelegate.swift */; };
 		DDC34EC928320DAD0011C81C /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC34EC828320DAD0011C81C /* ConversationsViewController.swift */; };
@@ -32,6 +33,7 @@
 		BB482997FEF0274A92DA4FFF /* Pods-SMMProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMMProject.release.xcconfig"; path = "Target Support Files/Pods-SMMProject/Pods-SMMProject.release.xcconfig"; sourceTree = "<group>"; };
 		DD46F48528322ADF0087133D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DD46F487283232940087133D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		DD46F489283383CD0087133D /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		DDC34EC128320DAD0011C81C /* SMMProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMMProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC34EC428320DAD0011C81C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDC34EC628320DAD0011C81C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				DDC34EE728320FD10011C81C /* VideoPlayerViewController.swift */,
 				DDC34EE928320FE80011C81C /* NewConversationViewController.swift */,
 				DDC34EEB28320FF90011C81C /* ProfileViewController.swift */,
+				DD46F489283383CD0087133D /* ChatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				DDC34EC528320DAD0011C81C /* AppDelegate.swift in Sources */,
 				DDC34EEC28320FF90011C81C /* ProfileViewController.swift in Sources */,
 				DDC34EC728320DAD0011C81C /* SceneDelegate.swift in Sources */,
+				DD46F48A283383CD0087133D /* ChatViewController.swift in Sources */,
 				DDC34EE628320FB90011C81C /* PhotoViewerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
