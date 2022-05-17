@@ -29,7 +29,7 @@ class ConversationsViewController: UIViewController {
         //위 코드 대신 Firebase로 로그인 상태 확인
     }
     
-    //MARK: set in viewDidAppear !
+    //MARK: Set in viewDidAppear !
     private func validateAuth() {
         if FirebaseAuth.Auth.auth().currentUser == nil {
             let vc = LoginViewController()
