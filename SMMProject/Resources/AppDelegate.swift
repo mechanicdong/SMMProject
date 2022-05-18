@@ -52,9 +52,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         DatabaseManager.shared.userExists(with: email) { exists in
             if !exists { //user does not exist
                 //insert to database
-                DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName,
-                                                                    lastName: lastName,
-                                                                    emailAddress: email))
+                let chatUser = ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email)
+                DatabaseManager.shared.insertUser(with: chatUser) { success in
+                    if success {
+                        //upload google account's customed profile
+                        if user.profile.hasImage {
+                            guard let url = user.profile.imageURL(withDimension: 200) else {
+                                return
+                            }
+                            
+                            URLSession.shared.dataTask(with: url) { data, _, _ in
+                                guard let data = data else {
+                                    return
+                                }
+                                let fileName = chatUser.profilePictureFileName
+                                StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName) { result in
+                                    switch result {
+                                    case .success(let downloadUrl):
+                                        UserDefaults.standard.set(downloadUrl, forKey: "profile_picture_url")
+                                        print(downloadUrl)
+                                    case .failure(let error):
+                                        print("Storage manager error: \(error)")
+                                    }
+                                }  
+                            }.resume()
+                        }
+                    } // end of success
+                }
             }
         }
         
