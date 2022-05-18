@@ -48,6 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
               let firstName = user.profile.givenName,
               let lastName = user.profile.familyName else { return }
         
+        UserDefaults.standard.set(email, forKey: "email")
+        
         //Realtime DB에 동일 이메일이 가입되어 있는지 확인
         DatabaseManager.shared.userExists(with: email) { exists in
             if !exists { //user does not exist
