@@ -8,19 +8,57 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FirebaseMessaging
+import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
+                
+        Messaging.messaging().delegate = self
+        
+        //FCM 현재 등록 토큰 확인
+        Messaging.messaging().token { token, error in
+            if let error = error {
+                print("ERROR FCM 등록토큰 가져오기: \(error)")
+            }
+            else if let token = token {
+                print("FCM 등록토큰: \(token)")
+            }
+        }
+        
+        UNUserNotificationCenter.current().delegate = self
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
+            guard success else { return }
+            print("success in APNs registry")
+        }
+        
+        application.registerForRemoteNotifications()
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
         return true
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.list, .banner, .badge, .sound])
+    }
+    
+    //FCM 등록 토큰 갱신
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        messaging.token { token, _ in
+            guard let token = token else { return }
+            
+            print("FCM 등록 토큰 갱신: \(token)")
+        }
+    }
+    
+    
 
     // MARK: UISceneSession Lifecycle
     
@@ -112,4 +150,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
       return GIDSignIn.sharedInstance().handle(url)
     }
 }
+
 
