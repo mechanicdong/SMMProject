@@ -123,7 +123,7 @@ class ConversationsViewController: UIViewController {
                 let email = result["email"] else {
             return
         }
-        let vc = ChatViewController(with: email)
+        let vc = ChatViewController(with: email, id: nil) //맨 처음엔 id가 없으므로
         vc.isNewConversation = true
         vc.title = name
         vc.navigationItem.largeTitleDisplayMode = .never
@@ -189,7 +189,7 @@ extension ConversationsViewController: UITableViewDataSource, UITableViewDelegat
         tableView.deselectRow(at: indexPath, animated: true) //unhighlight
         let model = conversations[indexPath.row]
         
-        let vc = ChatViewController(with: model.otuerUserEmail)
+        let vc = ChatViewController(with: model.otuerUserEmail, id: model.id)
         vc.title = model.name
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
